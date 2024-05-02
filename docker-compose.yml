@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  rstudio:
+    image: rocker/geospatial:latest
+    container_name: rstudio
+    ports:
+      - "8787:8787"  # RStudio Server runs on port 8787 by default
+    environment:
+      - ROOT=FALSE  # Allows the user to login as root
+      - USERID=10002  # rstudio
+      - GROUPID=4504  # imars-common
+      - PASSWORD=$RSTUDIO_PW
+#    volumes:
+#      - ./data:/home/rstudio/data
