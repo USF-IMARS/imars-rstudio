@@ -11,5 +11,15 @@ services:
       - USERID=10002  # rstudio
       - GROUPID=4504  # imars-common
       - PASSWORD=$RSTUDIO_PW
-#    volumes:
-#      - ./data:/home/rstudio/data
+    volumes:
+      - type: volume
+        source: tpa_pgs
+        target: /srv/pgs
+
+volumes:
+  tpa_pgs:
+    driver: local
+    driver_opts:
+      type: "nfs4"
+      o: "rw,addr=131.247.188.131"
+      device: ":/data/tylarmurray"
