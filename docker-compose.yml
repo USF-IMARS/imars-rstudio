@@ -15,6 +15,7 @@ services:
       - type: volume
         source: tpa_pgs
         target: /srv/pgs
+    restart: always
 
 volumes:
   tpa_pgs:
