@@ -15,6 +15,7 @@ services:
       - type: volume
         source: tpa_pgs
         target: /srv/pgs
+      - ./homefiles:/home/rstudio:rw
     restart: always
 
 volumes:
